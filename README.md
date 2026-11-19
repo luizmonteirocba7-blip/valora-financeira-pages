@@ -1,9 +1,11 @@
-# Valora — GitHub Pages
+# Valora — Inteligência Financeira
 
-Interface estática da Valora Inteligência Financeira.
+**[Abrir a página publicada](https://luizmonteirocba7-blip.github.io/valora-financeira-pages/?v=mwno1khs)**
 
-Página: https://luizmonteirocba7-blip.github.io/valora-financeira-pages/
+Interface web com vídeo integrado ao fundo, painel de clientes e diagnóstico financeiro.
 
-Os dados são consultados e gravados na planilha privada através de Apps Script, mediante código de acesso informado pelo usuário. A chave não está incluída nos arquivos publicados e não é salva no armazenamento do navegador.
+Este repositório contém somente os arquivos compilados para o GitHub Pages. O código-fonte principal está no repositório privado valora-financeira.
 
-O código-fonte principal e as instruções de desenvolvimento ficam no repositório privado valora-financeira. Este repositório contém apenas os arquivos compilados da página.
+O acesso à planilha depende da implantação do Apps Script e de código privado informado pelo gestor. Nenhuma chave faz parte desta publicação. A demonstração usa dados fictícios.
+
+A identificação em version.json permite atualizar a página quando há uma nova publicação. Os arquivos da versão imediatamente anterior são preservados temporariamente para atender páginas em cache.
