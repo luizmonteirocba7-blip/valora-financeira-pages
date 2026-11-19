@@ -1,0 +1,57 @@
+
+/* Motion and interaction for the accompaniment plan buttons. */
+.plan-choice .plan-card>button{
+ position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;
+ border-radius:12px;font-weight:700;letter-spacing:.01em;cursor:pointer;
+ transition:transform .2s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease,color .25s ease;
+ -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+}
+.plan-choice .plan-card>button.secondary{
+ color:#07535b;background:linear-gradient(115deg,#f4fcfa,#e4f4ef);border:1px solid #9ccdc3;
+ box-shadow:0 4px 12px #07535b0a,inset 0 1px 0 #fff;
+}
+.plan-choice .plan-card>button.primary{
+ color:#fff;background:linear-gradient(115deg,#00998b,#00656c);border:1px solid #00877d;
+ box-shadow:0 5px 16px #00877d30;animation:valora-plan-glow 3.6s ease-in-out infinite;
+}
+.plan-choice .plan-card>button::before{
+ content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+ background:linear-gradient(110deg,transparent 22%,#ffffff55 50%,transparent 78%);
+ transform:translateX(-130%);transition:transform .65s ease;
+}
+.plan-choice .plan-card>button::after{
+ content:"\2192";display:inline-block;font-size:1.1em;line-height:1;opacity:.75;
+ transition:transform .2s ease,opacity .2s ease;
+}
+.plan-choice .plan-card>button svg{flex-shrink:0;transition:transform .2s ease}
+.plan-choice .plan-card>button:focus-visible{
+ outline:3px solid #d69d6e;outline-offset:4px;
+}
+.plan-choice .plan-card>button:active:not(:disabled){transform:translateY(1px) scale(.98)}
+.plan-choice .plan-card>button:disabled{animation:none;cursor:not-allowed}
+.plan-choice .no-plan{
+ text-underline-offset:6px;transition:color .2s ease,text-decoration-color .2s ease;
+ text-decoration:underline;text-decoration-color:transparent;
+}
+.plan-choice .no-plan:focus-visible{outline:3px solid #d69d6e;outline-offset:5px;border-radius:4px}
+@media(hover:hover) and (pointer:fine){
+ .plan-choice .plan-card>button:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 9px 20px #007e7633}
+ .plan-choice .plan-card>button.secondary:hover:not(:disabled){color:#fff;background:linear-gradient(115deg,#008e81,#00636b);border-color:#007c74}
+ .plan-choice .plan-card>button.primary:hover:not(:disabled){background:linear-gradient(115deg,#00a394,#00727a)}
+ .plan-choice .plan-card>button:hover:not(:disabled)::before{transform:translateX(130%)}
+ .plan-choice .plan-card>button:hover:not(:disabled)::after{transform:translateX(4px);opacity:1}
+ .plan-choice .plan-card>button:hover:not(:disabled) svg{transform:scale(1.12)}
+ .plan-choice .no-plan:hover{color:#e4b58c;text-decoration-color:currentColor}
+}
+.plan-choice .plan-card>button:active:not(:disabled){transform:translateY(1px) scale(.98)}
+@keyframes valora-plan-glow{
+ 0%,100%{box-shadow:0 5px 16px #00877d30}
+ 50%{box-shadow:0 6px 22px #00877d55,0 0 0 4px #00a3940d}
+}
+@media(prefers-reduced-motion:reduce){
+ .plan-choice .plan-card>button,.plan-choice .plan-card>button::before,.plan-choice .plan-card>button::after,
+ .plan-choice .plan-card>button svg,.plan-choice .no-plan{animation:none;transition:none}
+ .plan-choice .plan-card>button:hover:not(:disabled),.plan-choice .plan-card>button:active:not(:disabled),
+ .plan-choice .plan-card>button:hover:not(:disabled)::after,.plan-choice .plan-card>button:hover:not(:disabled) svg{transform:none}
+ .plan-choice .plan-card>button::before{display:none}
+}
